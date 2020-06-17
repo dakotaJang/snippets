@@ -1,0 +1,7 @@
+# https://www.ionos.ca/help/hosting/htaccess/notes-on-creating-rewrite-rules/
+RewriteEngine On
+RewriteBase /
+RewriteRule ^(about|api)($|/) - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule (.*) /index.html [R,L]
