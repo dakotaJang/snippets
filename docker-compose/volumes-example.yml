@@ -1,0 +1,13 @@
+# Volumes Short syntax - https://docs.docker.com/compose/compose-file/compose-file-v3/#short-syntax-3
+services:
+  app:
+    image: hello
+    volumes:
+      # Path on the host, relative to the Compose file
+      # changes on host is reflected in the container and vise versa
+      - .:/app
+
+      # Just specify a path and let the Engine create a volume
+      # Content in this path (inside container) are
+      # based on the image or changes made inside the container
+      - /app/hello
